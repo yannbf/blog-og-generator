@@ -8,7 +8,7 @@ exports.getUserData = async function (username) {
     .then((json) => {
       return {
         image: json.avatar_url,
-        username: `@${username}`,
+        username: json.name,
       };
     })
     .catch((err) => console.error('error:' + err));

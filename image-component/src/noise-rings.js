@@ -41,17 +41,16 @@ export const NoiseRings = ({
           y2="13.5806"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#5677FE" />
-          <stop offset="1" stopColor="#FF7300" />
+          <stop stopColor="#14b8a6" />
+          <stop offset="1" stopColor="#e91e63" />
         </linearGradient>
       </defs>
       <g
         strokeLinecap="round"
-        strokeLinecap="round"
         strokeWidth={`${strokeWidth}px`}
         fill="none"
         stroke="url(#paint0_linear)"
-        strokeOpacity="0.1"
+        strokeOpacity="0.2"
       >
         {paths.map((d, idx) => (
           <path key={idx} d={d} />
@@ -66,7 +65,7 @@ function drawIsolines([xMin, xMax], [yMin, yMax]) {
   const sizeY = yMax - yMin;
   const offset = [xMin, yMin];
   const intervals = linspace(12);
-  const gridSize = 100;
+  const gridSize = 150;
   const lines = [];
   let data = [];
 

@@ -11,6 +11,7 @@ const Template = (args) => <ShoutOut {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  image: 'https://varun.ca/varun-toy.jpg',
-  username: '@winkerVSbecks',
+  image: 'https://yannbraga.dev/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&w=384&q=75',
+  username: 'Yann Braga',
+  message: 'Creating an addon-like experience in Storybook using parameters and globals'
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StorybookLogo } from './storybook-logo';
+import { Logo } from './logo';
 import { NoiseRings } from './noise-rings';
 
 const Background = styled(NoiseRings)`
@@ -11,21 +11,21 @@ const Background = styled(NoiseRings)`
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-color: #2a0481;
+  background-color: black;
 `;
 
 const Card = styled.div`
   width: 1200px;
   height: 630px;
   overflow: hidden;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
 `;
 
 const Title = styled.h1`
-  font-size: 72px;
+  font-size: 50px;
   font-weight: 900;
-  line-height: 96px;
+  line-height: 1.2;
   letter-spacing: -0.5px;
   color: #fff;
   width: 570px;
@@ -56,7 +56,7 @@ const User = ({ image, username }) => (
   </div>
 );
 
-const StyledStorybookLogo = styled(StorybookLogo)`
+const StyledLogo = styled(Logo)`
   position: absolute;
   left: 64px;
   bottom: 36px;
@@ -72,13 +72,13 @@ const Message = styled.div`
   margin-bottom: 125px;
 `;
 
-export const ShoutOut = ({ image, username }) => (
+export const ShoutOut = ({ image, username, message }) => (
   <Card>
-    <Background width={1200} height={630} strokeWidth={8} seed={username} />
+    <Background width={1200} height={630} strokeWidth={2} seed={message} />
     <Message>
-      <Title>Thanks for contributing to Storybook!</Title>
+      <Title>{message}</Title>
       <User image={image} username={username} />
     </Message>
-    <StyledStorybookLogo />
+    <StyledLogo />
   </Card>
 );

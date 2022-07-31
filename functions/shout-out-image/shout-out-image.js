@@ -8,7 +8,8 @@ const script = fs.readFileSync(path.resolve(__dirname, './image.js'), 'utf-8');
 exports.handler = async function (event, ctx, callback) {
   const { queryStringParameters } = event;
 
-  const userId = queryStringParameters.id;
+  const userId = queryStringParameters.id || 'yannbf';
+  const blogTitle = queryStringParameters.title;
   const userData = await getUserData(userId);
 
   const browser = await playwright.launchChromium();
@@ -25,7 +26,7 @@ exports.handler = async function (event, ctx, callback) {
     <head>
       <meta charset="utf-8" />
       <link
-        href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900&display=swap"
+        href="https://fonts.googleapis.com/css?family=Inter:400,700,800,900&display=swap"
         rel="stylesheet"
       />
       <link rel="preload" href="${
@@ -40,17 +41,17 @@ exports.handler = async function (event, ctx, callback) {
             display: flex;
             align-items: center;
             text-align: center;
-            font-size: 72px;
+            font-size: 50px;
             font-weight: 900;
-            line-height: 96px;
-            font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial,
+            line-height: 1.2;
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial,
               sans-serif;
             width: 1200px;
             height: 630px;
             overflow: hidden;
           "
         >
-          Thanks for contributing to Storybook!
+          ${blogTitle}
         </div>
       </div>
     </body>
